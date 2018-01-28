@@ -5,13 +5,13 @@ class MashApi
 	## MASH API CALLS
 
 	def get_all_cards(cost)
-		Rails.logger.info "pulling cards that cose #{cost}"
-		response = HTTParty.get("#{BASE_URI}/#{cost}",
+		Rails.logger.info "pulling cards that cost #{cost}"
+		response = HTTParty.get("#{BASE_URI}cards?cost=#{cost}",
 		headers: { "X-Mashape-Key" => "qYq2t5tNu1mshlzPhXM9ewBthRm1p1LzScsjsnVhNPTn3BYoxC" })
 	end
 
-
-
-
-
+#response = Unirest.get "https://omgvamp-hearthstone-v1.p.mashape.com/cards?cost=1",
+#  headers:{
+#    "X-Mashape-Key" => "qYq2t5tNu1mshlzPhXM9ewBthRm1p1LzScsjsnVhNPTn3BYoxC"
+#  }
 end
