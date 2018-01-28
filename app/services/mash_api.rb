@@ -9,9 +9,4 @@ class MashApi
 		response = HTTParty.get("#{BASE_URI}cards?cost=#{cost}",
 		headers: { "X-Mashape-Key" => "qYq2t5tNu1mshlzPhXM9ewBthRm1p1LzScsjsnVhNPTn3BYoxC" })
 	end
-
-#response = Unirest.get "https://omgvamp-hearthstone-v1.p.mashape.com/cards?cost=1",
-#  headers:{
-#    "X-Mashape-Key" => "qYq2t5tNu1mshlzPhXM9ewBthRm1p1LzScsjsnVhNPTn3BYoxC"
-#  }
 end
