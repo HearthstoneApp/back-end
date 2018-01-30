@@ -1,5 +1,4 @@
 class MashApi
-	require "awesome_print"
 
 	BASE_URI = "https://omgvamp-hearthstone-v1.p.mashape.com/cards"
 
@@ -14,6 +13,7 @@ class MashApi
 	end
 
 	def cards_by_quality(card_quality)
+		card_quality = card_quality.capitalize
 		Rails.logger.info "pulling cards of #{card_quality} quality."
 		response = HTTParty.get("#{BASE_URI}/qualities/#{card_quality}", 
 		query: { format: "json" },
@@ -46,13 +46,3 @@ class MashApi
 	end
 
 end
-
-# figure out how to handle spaces in card name !!!!
-
-
-# These code snippets use an open-source library. http://unirest.io/ruby
-#response = Unirest.get "https://omgvamp-hearthstone-v1.p.mashape.com/cards/Leeroy%20Jenkins",
-#  headers:{
-#    "X-Mashape-Key" => "qYq2t5tNu1mshlzPhXM9ewBthRm1p1LzScsjsnVhNPTn3BYoxC",
-#    "Accept" => "application/json"
-#  }
